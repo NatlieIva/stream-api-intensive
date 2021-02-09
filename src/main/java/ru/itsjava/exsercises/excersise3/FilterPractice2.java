@@ -12,7 +12,7 @@ public class FilterPractice2 {
         System.out.println(students);
 
 //Методы бывают конвейрными(отложенными) и терминальными(энергичными)
-//Какой метод filter и какой метод count?
+//Какой метод filter - отложенный и какой метод count -терминальный?
 
         long countStudents = students.stream()
                 .filter(student -> student.getFaculty().isHumanitarian())

@@ -29,6 +29,10 @@ public class FunctionalInterfacesPractice {
         //который проверяет является ли первый символ у строки числом
         //Воспользоваться Character.isDigit()
 
+        Predicate<String> isNumber = str -> Character.isDigit(str.charAt(0));
+        System.out.println("isNumber.test(\"1Hello\") = " + isNumber.test("1Hello"));
+        System.out.println("isNumber.test(\"Hello\") = " + isNumber.test("Hello"));
+
         BiFunction<Integer, Integer, Integer> sum = (num1, num2) -> num1 + num2;
         BinaryOperator<Integer> sumBinaryOperator = (num1, num2) -> num1 + num2;
         System.out.println("sum.apply(5,4) = " + sum.apply(5, 4));
@@ -36,6 +40,9 @@ public class FunctionalInterfacesPractice {
 
 
         //Написать свой оператор разности для типа int
+
+        BinaryOperator<Integer> dif = (num1, num2) -> num1 - num2;
+        System.out.println("dif.apply(5,4) = " + dif.apply(5,4));
 
         //home
     }

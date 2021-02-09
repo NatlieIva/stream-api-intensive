@@ -1,6 +1,8 @@
 package ru.itsjava.exsercises.excersise2;
 
 import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class EffectiveFinalPractice {
 
@@ -14,6 +16,9 @@ public class EffectiveFinalPractice {
 
         printBestPerson.accept(30);
 
+        final String positive = "Число положительно";
+        Predicate <Integer> isPositive1 = num -> num > 0;
+//       Consumer <Integer> isPositive = (num>0) -> System.out.println(positive);
 
         // Задать переменную типа String в которой храним значение "Число положительно"
         // Написать свой предикат, который пишет фразу из переменной

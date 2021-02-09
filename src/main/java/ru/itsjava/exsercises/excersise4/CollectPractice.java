@@ -16,6 +16,8 @@ public class CollectPractice {
         //stream превратить в список с помощью метода collect
 
         Stream<String> stringStream = Stream.of("One", "Two");
+        List <String> list = stringStream.collect(Collectors.toList());
+        System.out.println("list = " + list);
 
 
     }

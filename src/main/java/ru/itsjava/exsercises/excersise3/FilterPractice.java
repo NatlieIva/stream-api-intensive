@@ -19,18 +19,22 @@ public class FilterPractice {
                 countHumanitarianStudents++;
             }
         }
-        System.out.println(countHumanitarianStudents);
+//        System.out.println(countHumanitarianStudents);
 
 
         long countStudents = students.stream()
                 .filter(student -> student.getFaculty().isHumanitarian())
                 .count();
 
-        System.out.println(countStudents);
+//        System.out.println(countStudents);
 
 //  Найти количество всех студентов,
 //  которые учатся на факультете старше 1969 года
+        long countStudents2 = students.stream()
+                .filter(student -> student.getFaculty().getBirthYear() > 1969)
+                .count();
 
+        System.out.println(countStudents2);
        //home
     }
 }

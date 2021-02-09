@@ -5,6 +5,7 @@ import ru.itsjava.model.Student;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StringPractice {
 
@@ -13,14 +14,18 @@ public class StringPractice {
         System.out.println(students);
         //Собрать имена всех студентов в одну строку
 
-        StringBuilder stringBuilder = new StringBuilder("{");
-        for (Student student : students) {
-            stringBuilder.append(student.getName()).append(",");
-        }
-        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-        stringBuilder.append('}');
-        String names = stringBuilder.toString();
-        System.out.println(names);
+//        StringBuilder stringBuilder = new StringBuilder("{");
+//        for (Student student : students) {
+//            stringBuilder.append(student.getName()).append(",");
+//        }
+//        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+//        stringBuilder.append('}');
+//        String names = stringBuilder.toString();
+//        System.out.println(names);
 
+        String namesStudents = students.stream()
+        .map(student -> student.getName())
+                .collect(Collectors.joining(", ", "{", "}"));
+        System.out.println("namesStudents = " + namesStudents);
     }
 }
